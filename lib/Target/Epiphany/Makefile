@@ -13,20 +13,14 @@ TARGET = Epiphany
 
 # Make sure that tblgen is run, first thing.
 BUILT_SOURCES = \
-		EpiphanyGenAsmMatcher.inc \
 		EpiphanyGenAsmWriter.inc \
 		EpiphanyGenCallingConv.inc \
-		EpiphanyGenCodeEmitter.inc \
-		EpiphanyGenDAGISel.inc i\
-		EpiphanyGenDisassemblerTables.inc \
+		EpiphanyGenDAGISel.inc \
 		EpiphanyGenInstrInfo.inc \
-		EpiphanyGenMCCodeEmitter.inc \
 		EpiphanyGenRegisterInfo.inc \
 		EpiphanyGenSubtargetInfo.inc
 
 DIRS = \
-	AsmParser \
-	Disassembler \
 	InstrPrinter \
 	MCTargetDesc \
 	TargetInfo
