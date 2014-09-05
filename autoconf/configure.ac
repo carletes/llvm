@@ -922,7 +922,7 @@ if test "$llvm_cv_enable_crash_overrides" = "yes" ; then
 fi
 
 dnl List all possible targets
-ALL_TARGETS="X86 Sparc PowerPC ARM AArch64 Mips XCore MSP430 CppBackend NVPTX Hexagon SystemZ R600"
+ALL_TARGETS="X86 Sparc PowerPC ARM AArch64 Mips XCore MSP430 CppBackend NVPTX Hexagon SystemZ R600 Epiphany"
 AC_SUBST(ALL_TARGETS,$ALL_TARGETS)
 
 dnl Allow specific targets to be specified for building (or not)
@@ -930,7 +930,7 @@ TARGETS_TO_BUILD=""
 AC_ARG_ENABLE([targets],AS_HELP_STRING([--enable-targets],
     [Build specific host targets: all or target1,target2,... Valid targets are:
      host, x86, x86_64, sparc, powerpc, arm64, arm, aarch64, mips, hexagon,
-     xcore, msp430, nvptx, systemz, r600, and cpp (default=all)]),,
+     xcore, msp430, nvptx, systemz, r600, epiphany, and cpp (default=all)]),,
     enableval=all)
 if test "$enableval" = host-only ; then
   enableval=host
@@ -957,6 +957,7 @@ case "$enableval" in
         nvptx)    TARGETS_TO_BUILD="NVPTX $TARGETS_TO_BUILD" ;;
         systemz)  TARGETS_TO_BUILD="SystemZ $TARGETS_TO_BUILD" ;;
         r600)     TARGETS_TO_BUILD="R600 $TARGETS_TO_BUILD" ;;
+        epiphany) TARGETS_TO_BUILD="Epiphany $TARGETS_TO_BUILD" ;;
         host) case "$llvm_cv_target_arch" in
             x86)         TARGETS_TO_BUILD="X86 $TARGETS_TO_BUILD" ;;
             x86_64)      TARGETS_TO_BUILD="X86 $TARGETS_TO_BUILD" ;;
