@@ -56,7 +56,7 @@ def RetCC_Epiphany : CallingConv<[
 
   // ... if enough registers are available --- otherwise the stack is used.
   CCIfType<[i32, f32], CCAssignToStack<4, 4>>
-]>
+]>;
 
 
 // Callee-saved registers.

@@ -1,4 +1,4 @@
-;===- ./lib/Target/Epiphany/LLVMBuild.txt ----------------------*- Conf -*--===;
+;===- ./lib/Target/Epiphany/MCTargetDesc/LLVMBuild.txt ---------*- Conf -*--===;
 ;
 ;                     The LLVM Compiler Infrastructure
 ;
@@ -15,19 +15,9 @@
 ;
 ;===------------------------------------------------------------------------===;
 
-[common]
-subdirectories = InstPrinter MCTargetDesc TargetInfo
-
 [component_0]
-type = TargetGroup
-name = Epiphany
-parent = Target
-has_asmprinter = 1
-
-[component_1]
 type = Library
-name = EpiphanyCodeGen
+name = EpiphanyDesc
 parent = Epiphany
-required_libraries = AsmPrinter CodeGen Core MC SelectionDAG EpiphanyAsmPrinter
-                     EpiphanyDesc EpiphanyInfo Support Target
+required_libraries = MC EpiphanyAsmPrinter EpiphanyInfo Support
 add_to_library_groups = Epiphany
